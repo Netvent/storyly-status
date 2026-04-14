@@ -2,7 +2,7 @@
   'use strict';
 
   var DAYS = 90;
-  var SUMMARY_URL = '/history/summary.json';
+  var SUMMARY_URL = '/data/summary.json';
 
   function formatDate(d) {
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
