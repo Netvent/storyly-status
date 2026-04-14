@@ -1,6 +1,4 @@
-(function () {
-  'use strict';
-
+window.addEventListener('load', function () {
   var DAYS = 90;
   var SUMMARY_URL = '/data/summary.json';
 
@@ -82,9 +80,7 @@
       var mins = dailyDown[key];
       var minutesDown = (mins !== undefined && mins !== null) ? mins : -1;
 
-      // If day is before the site started tracking, show no-data
       if (days[i] < startDate) minutesDown = -1;
-      // If day is today or after start and no entry, it means 0 downtime
       else if (minutesDown === -1) minutesDown = 0;
 
       var bar = document.createElement('div');
@@ -112,89 +108,48 @@
   }
 
   function findStartDate(site) {
-    // Use the earliest date in dailyMinutesDown, or fall back to 90 days ago
     var dailyDown = site.dailyMinutesDown || {};
     var keys = Object.keys(dailyDown);
     if (keys.length > 0) {
       keys.sort();
       return new Date(keys[0]);
     }
-    // If no downtime data, assume tracking started when the repo was created
-    // We'll use 90 days ago minus a buffer — effectively show all green
     var d = new Date();
     d.setDate(d.getDate() - DAYS);
     return d;
   }
 
-  function findInsertionPoint() {
-    // Try to insert before the footer, or after main content
-    var footer = document.querySelector('footer');
-    if (footer && footer.parentNode) {
-      var container = document.createElement('div');
-      container.id = 'uptime-history';
-      footer.parentNode.insertBefore(container, footer);
-      return container;
-    }
-    var main = document.querySelector('main');
-    if (main) {
-      var container = document.createElement('div');
-      container.id = 'uptime-history';
-      main.appendChild(container);
-      return container;
-    }
-    var sapper = document.getElementById('sapper');
-    if (sapper) {
-      var container = document.createElement('div');
-      container.id = 'uptime-history';
-      sapper.appendChild(container);
-      return container;
-    }
-    return null;
-  }
-
-  function init() {
-    fetch(SUMMARY_URL)
-      .then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .then(function (sites) {
-        var container = document.getElementById('uptime-history') || findInsertionPoint();
-        if (!container) return;
-
-        var title = document.createElement('h2');
-        title.textContent = 'Uptime History (' + DAYS + ' days)';
-        container.appendChild(title);
-
-        var days = getDays();
-
-        for (var i = 0; i < sites.length; i++) {
-          var startDate = findStartDate(sites[i]);
-          container.appendChild(renderService(sites[i], days, startDate));
-        }
-      })
-      .catch(function (err) {
-        console.warn('Uptime bars: could not load summary data', err);
-      });
-  }
-
-  // Upptime's Sapper app renders async — wait for content to load
-  function waitForApp() {
-    var maxAttempts = 50;
-    var attempts = 0;
-    var interval = setInterval(function () {
-      attempts++;
-      var hasContent = document.querySelector('footer') || document.querySelector('main');
-      if (hasContent || attempts >= maxAttempts) {
-        clearInterval(interval);
-        init();
-      }
-    }, 200);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', waitForApp);
+  // Create container and insert before footer
+  var container = document.createElement('div');
+  container.id = 'uptime-history';
+  var footer = document.querySelector('footer');
+  if (footer && footer.parentNode) {
+    footer.parentNode.insertBefore(container, footer);
   } else {
-    waitForApp();
+    var sapper = document.getElementById('sapper');
+    if (sapper) sapper.appendChild(container);
+    else document.body.appendChild(container);
   }
-})();
+
+  // Fetch data and render
+  fetch(SUMMARY_URL)
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function (sites) {
+      var title = document.createElement('h2');
+      title.textContent = 'Uptime History (' + DAYS + ' days)';
+      container.appendChild(title);
+
+      var days = getDays();
+
+      for (var i = 0; i < sites.length; i++) {
+        var startDate = findStartDate(sites[i]);
+        container.appendChild(renderService(sites[i], days, startDate));
+      }
+    })
+    .catch(function (err) {
+      console.warn('Uptime bars: could not load summary data', err);
+    });
+});
