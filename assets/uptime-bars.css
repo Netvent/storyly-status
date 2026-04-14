@@ -1,0 +1,133 @@
+#uptime-history {
+  max-width: 860px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+#uptime-history h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+  color: #1a1a2e;
+}
+
+.uptime-service {
+  margin-bottom: 1.25rem;
+}
+
+.uptime-service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.uptime-service-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.uptime-service-pct {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #22c55e;
+}
+
+.uptime-service-pct.degraded {
+  color: #eab308;
+}
+
+.uptime-service-pct.down {
+  color: #ef4444;
+}
+
+.uptime-bars {
+  display: flex;
+  gap: 1.5px;
+  align-items: flex-end;
+}
+
+.uptime-bar {
+  flex: 1;
+  height: 32px;
+  border-radius: 2px;
+  position: relative;
+  cursor: default;
+  transition: opacity 0.15s;
+  min-width: 2px;
+}
+
+.uptime-bar:hover {
+  opacity: 0.75;
+}
+
+.uptime-bar.operational {
+  background-color: #22c55e;
+}
+
+.uptime-bar.degraded {
+  background-color: #eab308;
+}
+
+.uptime-bar.partial-outage {
+  background-color: #f97316;
+}
+
+.uptime-bar.major-outage {
+  background-color: #ef4444;
+}
+
+.uptime-bar.no-data {
+  background-color: #e5e7eb;
+}
+
+.uptime-bar-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a2e;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.uptime-bar-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1a1a2e;
+}
+
+.uptime-bar:hover .uptime-bar-tooltip {
+  display: block;
+}
+
+.uptime-legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .uptime-bar {
+    height: 24px;
+    min-width: 1.5px;
+  }
+
+  .uptime-bars {
+    gap: 1px;
+  }
+}

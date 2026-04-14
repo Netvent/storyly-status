@@ -52,6 +52,12 @@ status-website:
       href: https://storyly.io
     - title: Help Center
       href: https://help.storyly.io
+  scripts:
+    - src: /assets/uptime-bars.js
+  links:
+    - rel: stylesheet
+      href: /assets/uptime-bars.css
+  customFootHtml: '<div id="uptime-history"></div>'
 
 i18n:
   activeIncidents: Active Incidents
