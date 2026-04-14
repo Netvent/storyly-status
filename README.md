@@ -23,15 +23,6 @@ This repository powers [status.storyly.io](https://status.storyly.io) using [Upp
 - **Core API** — `core.storyly.io/health`
 - **Studio** — `studio.storyly.io`
 
-### CDN & Media
-
-- **Media CDN** — `cdn.storyly.io`
-- **Media CDN (Mobi)** — `cdn.storyly.mobi`
-
-### Documentation
-
-- **Developer Docs** — `integration.storyly.io`
-
 ## Posting Incidents
 
 To create a manual incident (e.g., planned maintenance):
@@ -42,9 +33,12 @@ To create a manual incident (e.g., planned maintenance):
 4. The incident will appear on the status page automatically
 5. Close the issue when the incident is resolved
 
+> Note: Only netvent org members can create issues on this repo.
+
 ## Infrastructure
 
-- **Repo**: `netvent/storyly-status` (private)
+- **Repo**: `netvent/storyly-status` (public)
 - **GitHub Pages**: `gh-pages` branch → `status.storyly.io`
 - **DNS**: Route53 CNAME `status.storyly.io` → `netvent.github.io`
+- **SSL**: Let's Encrypt via GitHub Pages (auto-renewed)
 - **Secret**: `GH_PAT` — classic Personal Access Token with `repo` scope

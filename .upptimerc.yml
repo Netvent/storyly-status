@@ -33,37 +33,6 @@ sites:
 
   - name: Studio
     url: https://studio.storyly.io
-    expectedStatusCodes:
-      - 200
-      - 301
-      - 302
-    icon: https://dashboard.storyly.io/favicon.ico
-    maxResponseTime: 10000
-
-  # ===== CDN & Media =====
-  - name: Media CDN
-    url: https://cdn.storyly.io
-    expectedStatusCodes:
-      - 200
-      - 403
-    icon: https://dashboard.storyly.io/favicon.ico
-    maxResponseTime: 5000
-
-  - name: Media CDN (Mobi)
-    url: https://cdn.storyly.mobi
-    expectedStatusCodes:
-      - 200
-      - 403
-    icon: https://dashboard.storyly.io/favicon.ico
-    maxResponseTime: 5000
-
-  # ===== Documentation & Support =====
-  - name: Developer Docs
-    url: https://integration.storyly.io
-    expectedStatusCodes:
-      - 200
-      - 301
-      - 302
     icon: https://dashboard.storyly.io/favicon.ico
     maxResponseTime: 10000
 
@@ -83,17 +52,15 @@ status-website:
       href: https://storyly.io
     - title: Help Center
       href: https://help.storyly.io
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
 
 i18n:
   activeIncidents: Active Incidents
   allSystemsOperational: All Systems Operational
-  incidentReport: Incident Report for $DATE
+  incidentReport: Incident Report
   pastIncidents: Past Incidents
   pastIncidentsResolved: Resolved
   liveStatus: Live Status
-  overallUptime: Overall Uptime
+  overallUptime: "Overall Uptime: "
   responseTime: Response Time
   ms: ms
 
