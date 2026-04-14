@@ -1,4 +1,4 @@
-window.addEventListener('load', function () {
+function uptimeHistoryMain() {
   var DAYS = 90;
   var SUMMARY_URL = '/data/summary.json';
 
@@ -152,4 +152,20 @@ window.addEventListener('load', function () {
     .catch(function (err) {
       console.warn('Uptime bars: could not load summary data', err);
     });
-});
+}
+
+// Script is loaded dynamically after page load, so run immediately
+// but ensure footer exists (Sapper may still be hydrating)
+if (document.querySelector('footer')) {
+  uptimeHistoryMain();
+} else {
+  // Fallback: wait for Sapper to finish rendering
+  var _checkInterval = setInterval(function () {
+    if (document.querySelector('footer')) {
+      clearInterval(_checkInterval);
+      uptimeHistoryMain();
+    }
+  }, 500);
+  // Give up after 30 seconds
+  setTimeout(function () { clearInterval(_checkInterval); }, 30000);
+}
