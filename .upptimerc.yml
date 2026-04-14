@@ -1,0 +1,150 @@
+owner: netvent
+repo: storyly-status
+
+sites:
+  # ===== SDK Services =====
+  - name: SDK API
+    url: https://api.storyly.io/health
+    icon: https://dashboard.storyly.io/favicon.ico
+    assignees:
+      - elhanarinc
+    maxResponseTime: 5000
+
+  - name: SDK API (Open)
+    url: https://open.storyly.io/health
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 5000
+
+  - name: Event Tracking
+    url: https://trk.storyly.io/health
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 5000
+
+  - name: Web SDK CDN
+    url: https://web-story.storyly.io
+    expectedStatusCodes:
+      - 200
+      - 403
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 5000
+
+  # ===== Dashboard & Core =====
+  - name: Dashboard
+    url: https://dashboard.storyly.io
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 10000
+
+  - name: Core API
+    url: https://core.storyly.io/health
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 5000
+
+  - name: Studio
+    url: https://studio.storyly.io
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 10000
+
+  # ===== External & Integration APIs =====
+  - name: External API
+    url: https://external-api.storyly.io/health
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 5000
+
+  - name: Audience API
+    url: https://audience.storyly.io/health
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 5000
+
+  - name: Product API
+    url: https://product.storyly.io/health
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 5000
+
+  - name: Notification Service
+    url: https://notification.storyly.io/health
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 5000
+
+  # ===== CDN & Media =====
+  - name: Media CDN
+    url: https://cdn.storyly.io
+    expectedStatusCodes:
+      - 200
+      - 403
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 5000
+
+  - name: Media CDN (Mobi)
+    url: https://cdn.storyly.mobi
+    expectedStatusCodes:
+      - 200
+      - 403
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 5000
+
+  # ===== Documentation & Support =====
+  - name: Developer Docs
+    url: https://integration.storyly.io
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 10000
+
+  - name: Help Center
+    url: https://help.storyly.io
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+    icon: https://dashboard.storyly.io/favicon.ico
+    maxResponseTime: 10000
+
+status-website:
+  cname: status.storyly.io
+  name: Storyly Status
+  logoUrl: https://dashboard.storyly.io/favicon.ico
+  theme: light
+  introTitle: "**Storyly** System Status"
+  introMessage: "Real-time availability and performance data for Storyly services. If you're experiencing issues, please check below for current status or contact [support](https://help.storyly.io)."
+  favicon: https://dashboard.storyly.io/favicon.ico
+  navbar:
+    - title: Status
+      href: /
+    - title: Storyly
+      href: https://storyly.io
+    - title: Help Center
+      href: https://help.storyly.io
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
+
+i18n:
+  activeIncidents: Active Incidents
+  allSystemsOperational: All Systems Operational
+  incidentReport: Incident Report for $DATE
+  pastIncidents: Past Incidents
+  pastIncidentsResolved: Resolved
+  liveStatus: Live Status
+  overallUptime: Overall Uptime
+  responseTime: Response Time
+  ms: ms
+
+workflowSchedule:
+  uptime: "*/5 * * * *"
+  responseTime: "0 23 * * *"
+  graphs: "0 0 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+
+commitMessages:
+  readmeContent: ":pencil: Update summary [skip ci]"
+  summaryJson: ":card_file_box: Update status summary [skip ci]"
+  statusChange: "$EMOJI $SITE_NAME is $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms)"
+  graphsUpdate: ":bento: Update graphs [skip ci]"
+  commitAuthorName: "Storyly Status Bot"
+  commitAuthorEmail: "status@storyly.io"
