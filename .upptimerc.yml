@@ -56,12 +56,12 @@ status-website:
 i18n:
   activeIncidents: Active Incidents
   allSystemsOperational: All Systems Operational
-  incidentReport: Incident Report
+  incidentReport: "Incident #$NUMBER report →"
   pastIncidents: Past Incidents
-  pastIncidentsResolved: Resolved
+  pastIncidentsResolved: "Resolved in $MINUTES minutes with $POSTS posts"
   liveStatus: Live Status
-  overallUptime: "Overall Uptime: "
-  responseTime: Response Time
+  overallUptime: "Overall uptime: $UPTIME"
+  averageResponseTime: "Average response time: $TIMEms"
   ms: ms
 
 workflowSchedule:
