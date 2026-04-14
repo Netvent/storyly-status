@@ -68,6 +68,7 @@ sites:
     maxResponseTime: 10000
 
 status-website:
+  publish: true
   cname: status.storyly.io
   name: Storyly Status
   logoUrl: https://dashboard.storyly.io/favicon.ico
