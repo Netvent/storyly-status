@@ -6,6 +6,10 @@ on:
   push:
     branches:
       - master
+permissions:
+  contents: write
+  issues: write
+  pages: write
 jobs:
   static-site:
     runs-on: ubuntu-latest
@@ -16,3 +20,4 @@ jobs:
           command: "site"
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
