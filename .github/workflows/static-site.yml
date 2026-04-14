@@ -20,14 +20,19 @@ jobs:
           command: "site"
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-      - name: Copy custom assets to site output
+      - name: Copy custom assets and data to site output
         run: |
           mkdir -p site/__sapper__/export/custom
+          mkdir -p site/__sapper__/export/data
           rm -rf site/__sapper__/export/custom/uptime-history.css
           rm -rf site/__sapper__/export/custom/uptime-history.js
           cp -v custom/uptime-history.js site/__sapper__/export/custom/uptime-history.js
           cp -v custom/uptime-history.css site/__sapper__/export/custom/uptime-history.css
+          cp -v history/summary.json site/__sapper__/export/data/summary.json
+          echo "=== custom ==="
           ls -la site/__sapper__/export/custom/
+          echo "=== data ==="
+          ls -la site/__sapper__/export/data/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
