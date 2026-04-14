@@ -126,11 +126,40 @@
     return d;
   }
 
+  function findInsertionPoint() {
+    // Try to insert before the footer, or after main content
+    var footer = document.querySelector('footer');
+    if (footer && footer.parentNode) {
+      var container = document.createElement('div');
+      container.id = 'uptime-history';
+      footer.parentNode.insertBefore(container, footer);
+      return container;
+    }
+    var main = document.querySelector('main');
+    if (main) {
+      var container = document.createElement('div');
+      container.id = 'uptime-history';
+      main.appendChild(container);
+      return container;
+    }
+    var sapper = document.getElementById('sapper');
+    if (sapper) {
+      var container = document.createElement('div');
+      container.id = 'uptime-history';
+      sapper.appendChild(container);
+      return container;
+    }
+    return null;
+  }
+
   function init() {
     fetch(SUMMARY_URL)
-      .then(function (r) { return r.json(); })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
       .then(function (sites) {
-        var container = document.getElementById('uptime-history');
+        var container = document.getElementById('uptime-history') || findInsertionPoint();
         if (!container) return;
 
         var title = document.createElement('h2');
@@ -149,10 +178,23 @@
       });
   }
 
-  // Run after DOM is ready
+  // Upptime's Sapper app renders async — wait for content to load
+  function waitForApp() {
+    var maxAttempts = 50;
+    var attempts = 0;
+    var interval = setInterval(function () {
+      attempts++;
+      var hasContent = document.querySelector('footer') || document.querySelector('main');
+      if (hasContent || attempts >= maxAttempts) {
+        clearInterval(interval);
+        init();
+      }
+    }, 200);
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', waitForApp);
   } else {
-    init();
+    waitForApp();
   }
 })();
