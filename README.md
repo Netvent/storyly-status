@@ -16,7 +16,6 @@ This repository powers [status.storyly.io](https://status.storyly.io) using [Upp
 - **SDK API** — `api.storyly.io/health`
 - **SDK API (Open)** — `open.storyly.io/health`
 - **Event Tracking** — `trk.storyly.io/health`
-- **Web SDK CDN** — `web-story.storyly.io`
 
 ### Dashboard & Core
 
@@ -24,22 +23,14 @@ This repository powers [status.storyly.io](https://status.storyly.io) using [Upp
 - **Core API** — `core.storyly.io/health`
 - **Studio** — `studio.storyly.io`
 
-### External & Integration APIs
-
-- **External API** — `external-api.storyly.io/health`
-- **Audience API** — `audience.storyly.io/health`
-- **Product API** — `product.storyly.io/health`
-- **Notification Service** — `notification.storyly.io/health`
-
 ### CDN & Media
 
 - **Media CDN** — `cdn.storyly.io`
 - **Media CDN (Mobi)** — `cdn.storyly.mobi`
 
-### Documentation & Support
+### Documentation
 
 - **Developer Docs** — `integration.storyly.io`
-- **Help Center** — `help.storyly.io`
 
 ## Posting Incidents
 
@@ -51,11 +42,9 @@ To create a manual incident (e.g., planned maintenance):
 4. The incident will appear on the status page automatically
 5. Close the issue when the incident is resolved
 
-## Setup
+## Infrastructure
 
-1. Push this repo to `netvent/storyly-status` on GitHub
-2. Go to **Settings > Secrets and variables > Actions**
-3. Add a secret named `GH_PAT` with a Personal Access Token (needs `repo` scope)
-4. Go to **Settings > Pages** and set source to `gh-pages` branch
-5. Update Route53 CNAME: `status.storyly.io` → `netvent.github.io`
-6. Run the workflows manually once to initialize data
+- **Repo**: `netvent/storyly-status` (private)
+- **GitHub Pages**: `gh-pages` branch → `status.storyly.io`
+- **DNS**: Route53 CNAME `status.storyly.io` → `netvent.github.io`
+- **Secret**: `GH_PAT` — classic Personal Access Token with `repo` scope
