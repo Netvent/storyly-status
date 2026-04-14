@@ -2,43 +2,30 @@
 
 This repository powers [status.storyly.io](https://status.storyly.io) using [Upptime](https://upptime.js.org).
 
-## How it works
-
-- GitHub Actions checks all endpoints every 5 minutes
-- Results are committed to this repo
-- A static status page is generated and deployed to GitHub Pages
-- When a service goes down, a GitHub Issue is automatically created
-
-## Monitored Services
-
-### SDK Services
-
-- **SDK API** — `api.storyly.io/health`
-- **SDK API (Open)** — `open.storyly.io/health`
-- **Event Tracking** — `trk.storyly.io/health`
-
-### Dashboard & Core
-
-- **Dashboard** — `dashboard.storyly.io`
-- **Core API** — `core.storyly.io/health`
-- **Studio** — `studio.storyly.io`
+<!--start: status pages-->
+<!-- This section is automatically updated by Upptime -->
+| URL | Status | History | Response Time | Uptime |
+| --- | ------ | ------- | ------------- | ------ |
+| [SDK API](https://api.storyly.io/health) | 🟩 Up | [sdk-api.yml](https://github.com/netvent/storyly-status/commits/HEAD/history/sdk-api.yml) | | |
+| [SDK API (Open)](https://open.storyly.io/health) | 🟩 Up | [sdk-api-open.yml](https://github.com/netvent/storyly-status/commits/HEAD/history/sdk-api-open.yml) | | |
+| [Event Tracking](https://trk.storyly.io/health) | 🟩 Up | [event-tracking.yml](https://github.com/netvent/storyly-status/commits/HEAD/history/event-tracking.yml) | | |
+| [Dashboard](https://dashboard.storyly.io) | 🟩 Up | [dashboard.yml](https://github.com/netvent/storyly-status/commits/HEAD/history/dashboard.yml) | | |
+| [Core API](https://core.storyly.io/health) | 🟩 Up | [core-api.yml](https://github.com/netvent/storyly-status/commits/HEAD/history/core-api.yml) | | |
+| [Studio](https://studio.storyly.io) | 🟩 Up | [studio.yml](https://github.com/netvent/storyly-status/commits/HEAD/history/studio.yml) | | |
+<!--end: status pages-->
 
 ## Posting Incidents
 
-To create a manual incident (e.g., planned maintenance):
-
 1. Go to **Issues** tab
-2. Create a new issue
-3. Add the label `incident` to the issue
-4. The incident will appear on the status page automatically
-5. Close the issue when the incident is resolved
+2. Create a new issue with the `incident` label
+3. The incident will appear on the status page automatically
+4. Close the issue when the incident is resolved
 
-> Note: Only netvent org members can create issues on this repo.
+> Only netvent org members can create issues.
 
 ## Infrastructure
 
-- **Repo**: `netvent/storyly-status` (public)
 - **GitHub Pages**: `gh-pages` branch → `status.storyly.io`
 - **DNS**: Route53 CNAME `status.storyly.io` → `netvent.github.io`
 - **SSL**: Let's Encrypt via GitHub Pages (auto-renewed)
-- **Secret**: `GH_PAT` — classic Personal Access Token with `repo` scope
+- **Secret**: `GH_PAT` — classic PAT with `repo` scope
