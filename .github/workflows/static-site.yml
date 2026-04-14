@@ -20,17 +20,9 @@ jobs:
           command: "site"
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-      - name: Debug - find export output
-        run: |
-          echo "=== Root ==="
-          ls -la
-          echo "=== status-page ==="
-          ls -la status-page/ 2>/dev/null || echo "no status-page dir"
-          echo "=== status-page/__sapper__ ==="
-          ls -la status-page/__sapper__/ 2>/dev/null || echo "no __sapper__ dir"
-          echo "=== status-page/__sapper__/export ==="
-          ls -la status-page/__sapper__/export/ 2>/dev/null || echo "no export dir"
-          echo "=== find all index.html ==="
-          find . -name "index.html" -not -path "*/node_modules/*" 2>/dev/null | head -20
-          echo "=== find all __sapper__ ==="
-          find . -name "__sapper__" -type d 2>/dev/null | head -10
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site/__sapper__/export
+          cname: status.storyly.io
