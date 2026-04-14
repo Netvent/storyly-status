@@ -75,7 +75,7 @@ workflowSchedule:
 commitMessages:
   readmeContent: ":pencil: Update summary [skip ci]"
   summaryJson: ":card_file_box: Update status summary [skip ci]"
-  statusChange: "$EMOJI $SITE_NAME is $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms)"
+  statusChange: "$PREFIX $SITE_NAME is $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms)"
   graphsUpdate: ":bento: Update graphs [skip ci]"
   commitAuthorName: "Storyly Status Bot"
   commitAuthorEmail: "status@storyly.io"
