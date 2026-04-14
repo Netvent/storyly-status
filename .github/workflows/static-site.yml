@@ -23,8 +23,10 @@ jobs:
       - name: Copy custom assets to site output
         run: |
           mkdir -p site/__sapper__/export/custom
-          cp -v custom/uptime-history.js site/__sapper__/export/custom/
-          cp -v custom/uptime-history.css site/__sapper__/export/custom/
+          rm -rf site/__sapper__/export/custom/uptime-history.css
+          rm -rf site/__sapper__/export/custom/uptime-history.js
+          cp -v custom/uptime-history.js site/__sapper__/export/custom/uptime-history.js
+          cp -v custom/uptime-history.css site/__sapper__/export/custom/uptime-history.css
           ls -la site/__sapper__/export/custom/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
