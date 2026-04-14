@@ -20,14 +20,6 @@ sites:
     icon: https://dashboard.storyly.io/favicon.ico
     maxResponseTime: 5000
 
-  - name: Web SDK CDN
-    url: https://web-story.storyly.io
-    expectedStatusCodes:
-      - 200
-      - 403
-    icon: https://dashboard.storyly.io/favicon.ico
-    maxResponseTime: 5000
-
   # ===== Dashboard & Core =====
   - name: Dashboard
     url: https://dashboard.storyly.io
@@ -47,27 +39,6 @@ sites:
       - 302
     icon: https://dashboard.storyly.io/favicon.ico
     maxResponseTime: 10000
-
-  # ===== External & Integration APIs =====
-  - name: External API
-    url: https://external-api.storyly.io/health
-    icon: https://dashboard.storyly.io/favicon.ico
-    maxResponseTime: 5000
-
-  - name: Audience API
-    url: https://audience.storyly.io/health
-    icon: https://dashboard.storyly.io/favicon.ico
-    maxResponseTime: 5000
-
-  - name: Product API
-    url: https://product.storyly.io/health
-    icon: https://dashboard.storyly.io/favicon.ico
-    maxResponseTime: 5000
-
-  - name: Notification Service
-    url: https://notification.storyly.io/health
-    icon: https://dashboard.storyly.io/favicon.ico
-    maxResponseTime: 5000
 
   # ===== CDN & Media =====
   - name: Media CDN
@@ -89,15 +60,6 @@ sites:
   # ===== Documentation & Support =====
   - name: Developer Docs
     url: https://integration.storyly.io
-    expectedStatusCodes:
-      - 200
-      - 301
-      - 302
-    icon: https://dashboard.storyly.io/favicon.ico
-    maxResponseTime: 10000
-
-  - name: Help Center
-    url: https://help.storyly.io
     expectedStatusCodes:
       - 200
       - 301
