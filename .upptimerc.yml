@@ -53,7 +53,7 @@ status-website:
     - title: Help Center
       href: https://help.storyly.io
   customHeadHtml: '<link rel="stylesheet" href="/custom/uptime-history.css">'
-  js: "var s=document.createElement('script');s.src='/custom/uptime-history.js';document.body.appendChild(s);"
+  js: "var s=document.createElement('script');s.src='/custom/uptime-history.js';document.head.appendChild(s);"
 
 i18n:
   activeIncidents: Active Incidents
