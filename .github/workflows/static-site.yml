@@ -21,7 +21,11 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
       - name: Copy assets to site output
-        run: cp -r assets/ site/__sapper__/export/assets/ 2>/dev/null || true
+        run: |
+          ls -la site/__sapper__/export/ || true
+          mkdir -p site/__sapper__/export/assets
+          cp -rv assets/* site/__sapper__/export/assets/
+          ls -la site/__sapper__/export/assets/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
