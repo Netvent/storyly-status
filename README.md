@@ -12,27 +12,32 @@ This repository powers [status.storyly.io](https://status.storyly.io) using [Upp
 ## Monitored Services
 
 ### SDK Services
+
 - **SDK API** — `api.storyly.io/health`
 - **SDK API (Open)** — `open.storyly.io/health`
 - **Event Tracking** — `trk.storyly.io/health`
 - **Web SDK CDN** — `web-story.storyly.io`
 
 ### Dashboard & Core
+
 - **Dashboard** — `dashboard.storyly.io`
 - **Core API** — `core.storyly.io/health`
 - **Studio** — `studio.storyly.io`
 
 ### External & Integration APIs
+
 - **External API** — `external-api.storyly.io/health`
 - **Audience API** — `audience.storyly.io/health`
 - **Product API** — `product.storyly.io/health`
 - **Notification Service** — `notification.storyly.io/health`
 
 ### CDN & Media
+
 - **Media CDN** — `cdn.storyly.io`
 - **Media CDN (Mobi)** — `cdn.storyly.mobi`
 
 ### Documentation & Support
+
 - **Developer Docs** — `integration.storyly.io`
 - **Help Center** — `help.storyly.io`
 
