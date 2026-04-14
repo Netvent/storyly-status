@@ -20,3 +20,9 @@ jobs:
           command: "site"
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./status-page/__sapper__/export
+          cname: status.storyly.io
