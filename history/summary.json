@@ -59,18 +59,18 @@
     "icon": "https://dashboard.storyly.io/favicon.ico",
     "slug": "web-sdk-cdn",
     "status": "down",
-    "uptime": "3.29%",
-    "uptimeDay": "3.29%",
-    "uptimeWeek": "3.29%",
-    "uptimeMonth": "3.29%",
-    "uptimeYear": "3.29%",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
     "time": 391,
     "timeDay": 391,
     "timeWeek": 391,
     "timeMonth": 391,
     "timeYear": 391,
     "dailyMinutesDown": {
-      "2026-04-14": 0
+      "2026-04-14": 2
     }
   },
   {
@@ -133,6 +133,26 @@
     "icon": "https://dashboard.storyly.io/favicon.ico",
     "slug": "external-api",
     "status": "down",
+    "uptime": "0.02%",
+    "uptimeDay": "0.02%",
+    "uptimeWeek": "0.02%",
+    "uptimeMonth": "0.02%",
+    "uptimeYear": "0.02%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2026-04-14": 2
+    }
+  },
+  {
+    "name": "Audience API",
+    "url": "https://audience.storyly.io/health",
+    "icon": "https://dashboard.storyly.io/favicon.ico",
+    "slug": "audience-api",
+    "status": "down",
     "uptime": "0.00%",
     "uptimeDay": "0.00%",
     "uptimeWeek": "0.00%",
@@ -144,27 +164,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-04-14": 0
-    }
-  },
-  {
-    "name": "Audience API",
-    "url": "https://audience.storyly.io/health",
-    "icon": "https://dashboard.storyly.io/favicon.ico",
-    "slug": "audience-api",
-    "status": "down",
-    "uptime": "2.45%",
-    "uptimeDay": "2.45%",
-    "uptimeWeek": "2.45%",
-    "uptimeMonth": "2.45%",
-    "uptimeYear": "2.45%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
-    "dailyMinutesDown": {
-      "2026-04-14": 0
+      "2026-04-14": 2
     }
   },
   {
@@ -184,7 +184,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-04-14": 0
+      "2026-04-14": 2
     }
   },
   {
@@ -193,18 +193,18 @@
     "icon": "https://dashboard.storyly.io/favicon.ico",
     "slug": "notification-service",
     "status": "down",
-    "uptime": "8.29%",
-    "uptimeDay": "8.29%",
-    "uptimeWeek": "8.29%",
-    "uptimeMonth": "8.29%",
-    "uptimeYear": "8.29%",
+    "uptime": "0.56%",
+    "uptimeDay": "0.56%",
+    "uptimeWeek": "0.56%",
+    "uptimeMonth": "0.56%",
+    "uptimeYear": "0.56%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-04-14": 0
+      "2026-04-14": 2
     }
   },
   {
@@ -278,7 +278,7 @@
     "timeMonth": 164,
     "timeYear": 164,
     "dailyMinutesDown": {
-      "2026-04-14": 0
+      "2026-04-14": 2
     }
   }
 ]
