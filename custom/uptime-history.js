@@ -154,18 +154,14 @@ function uptimeHistoryMain() {
     });
 }
 
-// Script is loaded dynamically after page load, so run immediately
-// but ensure footer exists (Sapper may still be hydrating)
-if (document.querySelector('footer')) {
-  uptimeHistoryMain();
-} else {
-  // Fallback: wait for Sapper to finish rendering
-  var _checkInterval = setInterval(function () {
-    if (document.querySelector('footer')) {
-      clearInterval(_checkInterval);
-      uptimeHistoryMain();
+// Run after everything loads, then poll until Sapper renders footer
+window.addEventListener('load', function () {
+  var _attempts = 0;
+  var _poll = setInterval(function () {
+    _attempts++;
+    if (document.querySelector('footer') || _attempts > 60) {
+      clearInterval(_poll);
+      if (document.querySelector('footer')) uptimeHistoryMain();
     }
   }, 500);
-  // Give up after 30 seconds
-  setTimeout(function () { clearInterval(_checkInterval); }, 30000);
-}
+});
