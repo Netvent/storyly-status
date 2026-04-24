@@ -1,0 +1,20 @@
+name: Incident Update CI
+on:
+  issues:
+    types: [opened, closed, reopened, edited, labeled, unlabeled]
+  issue_comment:
+    types: [created, edited, deleted]
+permissions:
+  actions: write
+  contents: read
+jobs:
+  trigger-summary:
+    if: contains(github.event.issue.labels.*.name, 'incident') || github.event.label.name == 'incident'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch Summary CI (cascades to Static Site CI via workflow_run)
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          gh api repos/${{ github.repository }}/actions/workflows/summary.yml/dispatches \
+            -f ref=master
