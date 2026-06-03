@@ -59,18 +59,18 @@
     "icon": "https://dashboard.storyly.io/favicon.ico",
     "slug": "dashboard",
     "status": "down",
-    "uptime": "99.89%",
-    "uptimeDay": "94.38%",
-    "uptimeWeek": "99.20%",
-    "uptimeMonth": "99.82%",
-    "uptimeYear": "99.89%",
+    "uptime": "99.83%",
+    "uptimeDay": "91.65%",
+    "uptimeWeek": "98.81%",
+    "uptimeMonth": "99.73%",
+    "uptimeYear": "99.83%",
     "time": 386,
     "timeDay": 385,
     "timeWeek": 383,
     "timeMonth": 379,
     "timeYear": 386,
     "dailyMinutesDown": {
-      "2026-06-03": 81
+      "2026-06-03": 121
     }
   },
   {
@@ -79,18 +79,18 @@
     "icon": "https://dashboard.storyly.io/favicon.ico",
     "slug": "core-api",
     "status": "down",
-    "uptime": "99.89%",
-    "uptimeDay": "94.39%",
-    "uptimeWeek": "99.20%",
-    "uptimeMonth": "99.82%",
-    "uptimeYear": "99.89%",
+    "uptime": "99.83%",
+    "uptimeDay": "91.65%",
+    "uptimeWeek": "98.81%",
+    "uptimeMonth": "99.73%",
+    "uptimeYear": "99.83%",
     "time": 355,
     "timeDay": 333,
     "timeWeek": 344,
     "timeMonth": 350,
     "timeYear": 355,
     "dailyMinutesDown": {
-      "2026-06-03": 81
+      "2026-06-03": 121
     }
   },
   {
@@ -99,18 +99,18 @@
     "icon": "https://dashboard.storyly.io/favicon.ico",
     "slug": "studio",
     "status": "down",
-    "uptime": "99.89%",
-    "uptimeDay": "94.39%",
-    "uptimeWeek": "99.20%",
-    "uptimeMonth": "99.82%",
-    "uptimeYear": "99.89%",
+    "uptime": "99.83%",
+    "uptimeDay": "91.65%",
+    "uptimeWeek": "98.81%",
+    "uptimeMonth": "99.73%",
+    "uptimeYear": "99.83%",
     "time": 361,
     "timeDay": 345,
     "timeWeek": 368,
     "timeMonth": 355,
     "timeYear": 361,
     "dailyMinutesDown": {
-      "2026-06-03": 81
+      "2026-06-03": 120
     }
   }
 ]
