@@ -58,53 +58,59 @@
     "url": "https://dashboard.storyly.io",
     "icon": "https://dashboard.storyly.io/favicon.ico",
     "slug": "dashboard",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 385,
-    "timeDay": 305,
-    "timeWeek": 370,
-    "timeMonth": 376,
+    "timeDay": 343,
+    "timeWeek": 372,
+    "timeMonth": 377,
     "timeYear": 385,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-06-03": 0
+    }
   },
   {
     "name": "Core API",
     "url": "https://core.storyly.io/health",
     "icon": "https://dashboard.storyly.io/favicon.ico",
     "slug": "core-api",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 355,
-    "timeDay": 289,
-    "timeWeek": 343,
-    "timeMonth": 350,
-    "timeYear": 355,
-    "dailyMinutesDown": {}
+    "time": 356,
+    "timeDay": 343,
+    "timeWeek": 349,
+    "timeMonth": 351,
+    "timeYear": 356,
+    "dailyMinutesDown": {
+      "2026-06-03": 0
+    }
   },
   {
     "name": "Studio",
     "url": "https://studio.storyly.io",
     "icon": "https://dashboard.storyly.io/favicon.ico",
     "slug": "studio",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 360,
-    "timeDay": 292,
-    "timeWeek": 371,
-    "timeMonth": 354,
-    "timeYear": 360,
-    "dailyMinutesDown": {}
+    "time": 361,
+    "timeDay": 348,
+    "timeWeek": 375,
+    "timeMonth": 355,
+    "timeYear": 361,
+    "dailyMinutesDown": {
+      "2026-06-03": 0
+    }
   }
 ]
