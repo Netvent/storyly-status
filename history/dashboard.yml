@@ -1,7 +1,7 @@
 url: https://dashboard.storyly.io
-status: up
-code: 200
-responseTime: 459
-lastUpdated: 2026-06-06T03:19:05.473Z
+status: down
+code: 403
+responseTime: 472
+lastUpdated: 2026-06-06T04:42:21.396Z
 startTime: 2026-04-14T08:39:30.924Z
 generator: Upptime <https://github.com/upptime/upptime>
