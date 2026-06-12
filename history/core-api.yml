@@ -1,7 +1,7 @@
 url: https://core.storyly.io/health
-status: down
-code: 403
-responseTime: 409
-lastUpdated: 2026-06-11T23:43:16.470Z
+status: up
+code: 200
+responseTime: 452
+lastUpdated: 2026-06-12T00:14:16.040Z
 startTime: 2026-04-14T08:39:31.493Z
 generator: Upptime <https://github.com/upptime/upptime>
