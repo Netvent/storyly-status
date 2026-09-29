@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # branch tip, not the event SHA: a run queued behind another push would otherwise be rejected
+          ref: ${{ github.ref_name }}
       - uses: upptime/uptime-monitor@v1.44.1
         with:
           # "update" = extra daily uptime check. Do NOT switch to "update-template":
