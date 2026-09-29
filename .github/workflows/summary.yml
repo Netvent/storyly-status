@@ -5,12 +5,15 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: ${{ github.repository }}-${{ github.ref_name }}-upptime
+  cancel-in-progress: false
 jobs:
   summary:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: upptime/uptime-monitor@v1.41.0
+      - uses: actions/checkout@v7
+      - uses: upptime/uptime-monitor@v1.44.1
         with:
           command: "summary"
         env:

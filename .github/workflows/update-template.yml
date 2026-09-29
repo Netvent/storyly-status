@@ -5,13 +5,18 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: ${{ github.repository }}-${{ github.ref_name }}-upptime
+  cancel-in-progress: false
 jobs:
   update-template:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: upptime/uptime-monitor@v1.41.0
+      - uses: actions/checkout@v7
+      - uses: upptime/uptime-monitor@v1.44.1
         with:
+          # "update" = extra daily uptime check. Do NOT switch to "update-template":
+          # it regenerates workflows from upstream and wipes our custom static-site/incident flow.
           command: "update"
         env:
           GH_PAT: ${{ secrets.GH_PAT }}

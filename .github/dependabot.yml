@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # Pinned action versions (upptime/uptime-monitor, checkout, ...) go stale silently;
+  # v1.41.0 broke when runners moved to Node 24 and monitoring stopped for 3.5 months.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

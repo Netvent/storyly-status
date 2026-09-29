@@ -5,12 +5,18 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: ${{ github.repository }}-${{ github.ref_name }}-upptime
+  cancel-in-progress: false
 jobs:
   graphs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: upptime/uptime-monitor@v1.41.0
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+      - uses: upptime/uptime-monitor@v1.44.1
         with:
           command: "graphs"
         env:

@@ -6,12 +6,15 @@ on:
 permissions:
   contents: write
   issues: write
+concurrency:
+  group: ${{ github.repository }}-${{ github.ref_name }}-upptime
+  cancel-in-progress: false
 jobs:
   uptime:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: upptime/uptime-monitor@v1.41.0
+      - uses: actions/checkout@v7
+      - uses: upptime/uptime-monitor@v1.44.1
         with:
           command: "uptime"
         env:
