@@ -17,7 +17,7 @@ jobs:
         with:
           # branch tip, not the event SHA: a run queued behind another push would otherwise be rejected
           ref: ${{ github.ref_name }}
-      - uses: upptime/uptime-monitor@v1.44.1
+      - uses: upptime/uptime-monitor@v1.46.0
         with:
           command: "response-time"
         env:
